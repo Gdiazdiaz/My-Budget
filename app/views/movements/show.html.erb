@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @movement %>
+
+<div>
+  <%= link_to "Edit this movement", edit_movement_path(@movement) %> |
+  <%= link_to "Back to movements", movements_path %>
+
+  <%= button_to "Destroy this movement", @movement, method: :delete %>
+</div>
