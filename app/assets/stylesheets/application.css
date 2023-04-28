@@ -13,7 +13,6 @@
  *= require_tree .
  *= require_self
  */
-
  .logo-container{
     display: flex;
     justify-content: center;
@@ -60,6 +59,16 @@
    margin: 0;
    background-color: #eeeeee;
    padding-top: 55px;
+   box-sizing: border-box;
+  }
+
+  .text{
+    color: #000000;
+    text-decoration: none;
+  }
+
+  a{
+    text-decoration: none;
   }
 
   .header{
@@ -79,7 +88,7 @@
    border: none;
    border-top: solid 1px #eeeeee;
    font-size: 18px;
-   width: 100vw;
+   width: 96vw;
    padding-top: 9px;
    padding-left: 12px;
    padding-bottom: 9px;
@@ -90,7 +99,7 @@
    bottom: 0;
    left: 0;
    right: 0;
-   padding-top: 12px;
+   /*padding-top: 12px;*/
    width: 100vw;
   }
   .action-btn{
@@ -169,6 +178,10 @@
    align-self: center;
   }
 
+  .category-name{
+    text-decoration: none;
+  }
+
  .green-link-btn-container{
    position: fixed;
    bottom: 0;
@@ -205,7 +218,7 @@
   }
 
   .select-tab{
-   width: 99vw;
+   width: 100vw;
    border: none;
    padding-top: 9px;
    padding-bottom: 9px;

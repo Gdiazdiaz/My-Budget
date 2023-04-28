@@ -2,8 +2,8 @@
     <div class='main-group-container'>
         <%= image_tag group.icon, class: 'icon', alt: 'category-icon' %>
         <div class='name-count-container'>
-            <%= content_tag :span, group.name, class: 'name-count' %>
-            <%= content_tag :span, "(#{group.movements.count})", class: 'name-count' %>
+            <%= content_tag :span, group.name, class: 'category-name text' %>
+            <%= content_tag :span, "(#{group.movements.count})", class: 'transactions-count text' %>
         </div>
     </div>
 </div>
