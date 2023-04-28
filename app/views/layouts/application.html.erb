@@ -13,9 +13,6 @@
   <body>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <% if controller_name != 'pages' %>
-      <%= button_to "Logout", destroy_user_session_path, method: :delete %>
-    <% end %>
     <%= yield %>
   </body>
 </html>

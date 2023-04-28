@@ -1,10 +1,26 @@
+<div class='header'>
+<%= link_to root_path do %>
+<img class='return-arrow' src="https://storage.googleapis.com/smartphoto-express-production-wp-blogs-com/9/2018/01/Arrow-left-white-1024x680.png" alt="return-arrow">
+<% end %>
+<h2 class='header-text'>Transactions</h2>
+</div>
 <p style="color: green"><%= notice %></p>
 
-<%= render @group %>
-
-<div>
-  <%= link_to "Edit this group", edit_group_path(@group) %> |
-  <%= link_to "Back to groups", groups_path %>
-
-  <%= button_to "Destroy this group", @group, method: :delete %>
+<div id="movements">
+<% @movements.each do |movement| %>
+  <div class="content-tab">
+    <div class='main-movement-container'>
+      <%= content_tag :span, movement.name, class: 'movement-name' %>
+      <div class='amount-container'>
+      $<%= content_tag :span, movement.amount, class: 'movement-amount' %>
+      </div>
+    </div>
+  </div>
+<% end %>
 </div>
+
+<div class="green-link-btn-container">
+    <div class='green-border'>
+    <%= link_to "Add a New Transaction", new_user_group_movement_path(@user.id, @group.id) %>
+    </div>
+  </div>

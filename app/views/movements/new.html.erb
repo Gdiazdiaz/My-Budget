@@ -1,9 +1,8 @@
-<h1>New movement</h1>
+<div class='header'>
+<%= link_to root_path do %>
+<img class='return-arrow' src="https://storage.googleapis.com/smartphoto-express-production-wp-blogs-com/9/2018/01/Arrow-left-white-1024x680.png" alt="return-arrow">
+<% end %>
+<h2 class='header-text'>New movement</h2>
+</div>
 
 <%= render "form", movement: @movement %>
-
-<br>
-
-<div>
-  <%= link_to "Back to movements", movements_path %>
-</div>
