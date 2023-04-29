@@ -7,6 +7,9 @@
 <p style="color: green"><%= notice %></p>
 
 <div id="groups">
+<% if @groups.size == 0 %>
+    <h2>Please add a new category</h2>
+    <% end %>
   <% @groups.each do |group| %>
     <%= link_to user_group_path(group.author.id, group.id) do %>
     <div class="content-tab">

@@ -2,7 +2,7 @@
 <%= link_to root_path do %>
 <img class='return-arrow' src="https://storage.googleapis.com/smartphoto-express-production-wp-blogs-com/9/2018/01/Arrow-left-white-1024x680.png" alt="return-arrow">
 <% end %>
-<h2 class='header-text'>Transactions</h2>
+<h2 class='header-text'><%= @group.name %><%= content_tag :span, " ($#{@group.movements.sum { |rf| rf.amount }})", class: 'total-amount' %></h2>
 </div>
 <p style="color: green"><%= notice %></p>
 

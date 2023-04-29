@@ -12,6 +12,7 @@ class MovementsController < ApplicationController
 
   # GET /movements/new
   def new
+    @group = Group.find(params[:group_id])
     @groups = current_user.groups
     @movement = Movement.new
   end

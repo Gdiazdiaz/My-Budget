@@ -11,7 +11,7 @@
 
   <p>
     <strong>Amount:</strong>
-    <%= movement.amount %>
+    <%= number_with_precision(movement.amount, precision: 2) %>
   </p>
 
 </div>
