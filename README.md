@@ -143,6 +143,8 @@ Authors would like to thank:
 - Code Reviewers
 - Coding Partners
 
+Original design idea by [Gregoire Vella on Behance](https://www.behance.net/gregoirevella).
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- LICENSE -->
