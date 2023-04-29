@@ -18,5 +18,6 @@ Rails.application.routes.draw do
   # root "articles#index
   
   root "pages#splash"
+  get '/pages/splash', to: 'pages#splash'
 
 end
