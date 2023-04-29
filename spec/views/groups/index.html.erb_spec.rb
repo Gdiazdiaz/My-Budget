@@ -6,8 +6,10 @@ RSpec.describe 'groups/index.html.erb', type: :feature do
   before(:each) do
     user.confirm
     sign_in user
-    @group = Group.create(name: 'Food', icon: 'https://img.icons8.com/?size=512&id=21575&format=png', author_id: user.id)
-    @group2 = Group.create(name: 'Bank', icon: 'https://img.icons8.com/?size=512&id=21575&format=png', author_id: user.id)
+    @group = Group.create(name: 'Food', icon: 'https://img.icons8.com/?size=512&id=21575&format=png',
+                          author_id: user.id)
+    @group2 = Group.create(name: 'Bank', icon: 'https://img.icons8.com/?size=512&id=21575&format=png',
+                           author_id: user.id)
     visit user_groups_path(user.id)
   end
 
@@ -25,8 +27,8 @@ RSpec.describe 'groups/index.html.erb', type: :feature do
   end
 
   it 'Shows the amount of movements of the categories' do
-    expect(page).to have_content("#{@group.movements.count}")
-    expect(page).to have_content("#{@group2.movements.count}")
+    expect(page).to have_content(@group.movements.count.to_s)
+    expect(page).to have_content(@group2.movements.count.to_s)
   end
 
   it 'redirects me to the ransactions age for a specific category' do
@@ -40,5 +42,4 @@ RSpec.describe 'groups/index.html.erb', type: :feature do
     link.click
     expect(page).to have_current_path(new_user_group_path(user.id))
   end
-
 end

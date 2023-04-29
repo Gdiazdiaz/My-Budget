@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe '/pages/splash.html.erb', type: :feature do
-
   before do
     visit root_path
   end
@@ -25,5 +24,4 @@ RSpec.describe '/pages/splash.html.erb', type: :feature do
     link.click
     expect(page).to have_current_path(new_user_registration_path)
   end
-
 end

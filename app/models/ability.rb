@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class Ability
   include CanCan::Ability
 
@@ -7,6 +5,7 @@ class Ability
     # Define abilities for the user here. For example:
     #
     return unless user.present?
+
     can :read, Group, author_id: user.id
 
     # Users can read the movements that they own.
@@ -17,9 +16,10 @@ class Ability
     can :create, Movement
 
     # Users can update and delete groups and movements that they own.
-    can [:update, :destroy], Group, author_id: user.id
-    can [:update, :destroy], Movement, author_id: user.id
+    can %i[update destroy], Group, author_id: user.id
+    can %i[update destroy], Movement, author_id: user.id
     return unless user.admin?
+
     can :manage, :all
     #
     # The first argument to `can` is the action you are giving the user

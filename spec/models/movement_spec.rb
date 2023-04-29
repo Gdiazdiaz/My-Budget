@@ -2,7 +2,9 @@ require 'rails_helper'
 RSpec.describe Movement, type: :model do
   let(:user) { User.create(name: 'Glenda Diaz', email: 'test@example.com', password: '12345678') }
   let(:group) { Group.create(name: 'Food', icon: 'https://img.icons8.com/?size=512&id=21575&format=png', author_id: user.id) }
-  let(:movement) {Movement.create(name: 'Coffee at Starbucks', amount: 100, author_id: user.id, category_id: group.id) }
+  let(:movement) do
+    Movement.create(name: 'Coffee at Starbucks', amount: 100, author_id: user.id, category_id: group.id)
+  end
 
   it 'movement should be valid' do
     expect(movement).to be_valid

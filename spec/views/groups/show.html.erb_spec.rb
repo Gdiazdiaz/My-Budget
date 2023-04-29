@@ -6,7 +6,8 @@ RSpec.describe 'groups/index.html.erb', type: :feature do
   before(:each) do
     user.confirm
     sign_in user
-    @group = Group.create(name: 'Food', icon: 'https://img.icons8.com/?size=512&id=21575&format=png', author_id: user.id)
+    @group = Group.create(name: 'Food', icon: 'https://img.icons8.com/?size=512&id=21575&format=png',
+                          author_id: user.id)
     @movement = Movement.create(name: 'Deposit', amount: 100, author_id: user.id, category_id: @group.id)
     @movement2 = Movement.create(name: 'Transfer', amount: 50, author_id: user.id, category_id: @group.id)
     visit user_group_path(user.id, @group.id)
@@ -17,7 +18,7 @@ RSpec.describe 'groups/index.html.erb', type: :feature do
   end
 
   it 'Shows the total amount of all transaction in the category' do
-    expect(page).to have_content("#{@group.movements.sum { |rf| rf.amount }}")
+    expect(page).to have_content(@group.movements.sum(&:amount).to_s)
   end
 
   it 'Shows the name of the transactions' do
@@ -35,5 +36,4 @@ RSpec.describe 'groups/index.html.erb', type: :feature do
     link.click
     expect(page).to have_current_path(new_user_group_movement_path(user.id, @group.id))
   end
-
 end
