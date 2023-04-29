@@ -1,12 +1,9 @@
 <div id="<%= dom_id group %>">
-  <p>
-    <strong>Name:</strong>
-    <%= group.name %>
-  </p>
-
-  <p>
-    <strong>Icon:</strong>
-    <%= group.icon %>
-  </p>
-
+    <div class='main-group-container'>
+        <%= image_tag group.icon, class: 'icon', alt: 'category-icon' %>
+        <div class='name-count-container'>
+            <%= content_tag :span, group.name, class: 'category-name text' %>
+            <%= content_tag :span, "(#{group.movements.count})", class: 'transactions-count text' %>
+        </div>
+    </div>
 </div>

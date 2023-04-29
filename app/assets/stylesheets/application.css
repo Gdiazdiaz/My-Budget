@@ -14,6 +14,13 @@
  *= require_self
  */
 
+ @font-face {
+  font-family: 'MyFont';
+  src: url('Proxima Nova Alt Light.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
  .logo-container{
     display: flex;
     justify-content: center;
@@ -24,7 +31,7 @@
     align-self: center;
  }
  .splash-screen{
-    background-color: #02198B;
+    background-color: #3778c2;
     position: fixed;
     top: 0;
     bottom: 0;
@@ -44,11 +51,188 @@
 
   .login-btn,
   .signup-btn{
-    background-color: #ffd500;
+    background-color: #5fb523;
     color: #000000;
     font-size: 25px;
     padding: 5px;
     text-decoration: none;
     width: 75%;
     text-align: center;
+    color: #ffffff;
+  }
+
+  /* ********************************** */
+
+  body{
+   margin: 0;
+   background-color: #eeeeee;
+   padding-top: 55px;
+   box-sizing: border-box;
+   font-family: 'MyFont', sans-serif;
+  }
+
+  .text{
+    color: #000000;
+    text-decoration: none;
+  }
+
+  a{
+    text-decoration: none;
+  }
+
+  .header{
+   background-color: #3778c2;
+   position: fixed;
+   top: 0;
+   left: 0;
+   right: 0;
+  }
+
+  .header-text{
+   color: #ffffff;
+   text-align: center;
+   font-weight: lighter;
+  }
+
+  .input-tab{
+   border: none;
+   border-top: solid 1px #eeeeee;
+   font-size: 18px;
+   width: 96vw;
+   padding-top: 9px;
+   padding-left: 12px;
+   padding-bottom: 9px;
+  }
+
+  .btn-container{
+   position: fixed;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   /*padding-top: 12px;*/
+   width: 100vw;
+  }
+  .action-btn{
+   background-color: #5fb523;
+   color: #ffffff;
+   width: 94vw;
+   border: 1px solid #ffffff;
+   padding-top: 12px;
+   padding-bottom: 12px;
+   font-size: 18px;
+  }
+
+  .actions-container{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   padding-top: 10px;
+  }
+
+  .action-link{
+   color: #000000;
+   opacity: 0.5;
+   text-decoration: none;
+  }
+
+  .border{
+   background-color: #5fb523;
+   padding: 3vw;
+  }
+
+  .return-arrow{
+   width: 30px;
+   position: absolute;
+   top: 20px;
+   left: 20px;
+  }
+
+  /*********Categories************ */
+
+
+  #groups{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+  }
+
+  .content-tab{
+   background-color: #ffffff;
+   width: 90vw;
+   padding: 10px;
+   margin-top: 10px;
+  }
+  .icon{
+   width: 40px;
+  }
+
+  .logout-arrow{
+   width: 35px;
+   cursor: pointer;
+  }
+
+  .logout-btn{
+   background-color: transparent;
+   border: none;
+   position: absolute;
+   right: 12px;
+   top: 17px;
+  }
+
+  .main-group-container{
+   display: flex;
+   gap: 12px;
+  }
+
+  .name-count-container{
+   align-self: center;
+  }
+
+  .category-name{
+    text-decoration: none;
+  }
+
+ .green-link-btn-container{
+   position: fixed;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   margin-top: 12px;
+   background-color: #5fb523;
+   padding: 2vw;
+ }
+
+ .green-border{
+   border: solid 1px #ffffff;
+   text-align: center;
+   padding-top: 8px;
+   padding-bottom: 8px;
+ }
+
+ .green-link-btn{
+   color: #ffffff;
+   text-decoration: none;
+ }
+
+ /************************************ */
+
+ #movements{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+  }
+
+  .main-movement-container{
+   display: flex;
+   justify-content: space-between;
+  }
+
+  .select-tab{
+   width: 100vw;
+   border: none;
+   padding-top: 9px;
+   padding-bottom: 9px;
+   border-top: solid 1px #eeeeee;
+   font-size: 18px;
+   padding-left: 2vw;
   }

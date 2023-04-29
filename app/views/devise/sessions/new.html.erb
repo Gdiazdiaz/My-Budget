@@ -1,26 +1,26 @@
-<h2>Log in</h2>
+<div class='header'>
+<%= link_to root_path do %>
+<img class='return-arrow' src="https://storage.googleapis.com/smartphoto-express-production-wp-blogs-com/9/2018/01/Arrow-left-white-1024x680.png" alt="return-arrow">
+<% end %>
+<h2 class='header-text'>Sign in</h2>
+</div>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'Email', class: 'input-tab' %>
   </div>
 
   <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
+    <%= f.password_field :password, autocomplete: "current-password", placeholder: 'Password', class: 'input-tab' %>
   </div>
 
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+  <div class="actions btn-container">
+    <div class='border'>
+      <%= f.submit "Log in", class: 'action-btn btn' %>
     </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
   </div>
 <% end %>
 
+<div class='actions-container'>
 <%= render "devise/shared/links" %>
+</div>

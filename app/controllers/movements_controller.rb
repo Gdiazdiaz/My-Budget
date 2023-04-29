@@ -12,6 +12,8 @@ class MovementsController < ApplicationController
 
   # GET /movements/new
   def new
+    @group = Group.find(params[:group_id])
+    @groups = current_user.groups
     @movement = Movement.new
   end
 
@@ -21,11 +23,13 @@ class MovementsController < ApplicationController
 
   # POST /movements or /movements.json
   def create
-    @movement = Movement.new(movement_params)
+    @groups = current_user.groups
+    @movement = Movement.new(movement_params.merge(author: current_user))
+    @group = @groups.find_by(id: @movement.category_id)
 
     respond_to do |format|
       if @movement.save
-        format.html { redirect_to movement_url(@movement), notice: "Movement was successfully created." }
+        format.html { redirect_to user_group_path(@group.author.id, @group.id), notice: "Movement was successfully created." }
         format.json { render :show, status: :created, location: @movement }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +42,7 @@ class MovementsController < ApplicationController
   def update
     respond_to do |format|
       if @movement.update(movement_params)
-        format.html { redirect_to movement_url(@movement), notice: "Movement was successfully updated." }
+        format.html { redirect_to user_group_movements_path, notice: "Movement was successfully updated." }
         format.json { render :show, status: :ok, location: @movement }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -65,6 +69,6 @@ class MovementsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def movement_params
-      params.require(:movement).permit(:author_id, :name, :amount)
+      params.require(:movement).permit(:name, :amount, :category_id)
     end
 end
