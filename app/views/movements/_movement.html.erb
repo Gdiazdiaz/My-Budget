@@ -1,0 +1,17 @@
+<div id="<%= dom_id movement %>">
+  <p>
+    <strong>Author:</strong>
+    <%= movement.author_id %>
+  </p>
+
+  <p>
+    <strong>Name:</strong>
+    <%= movement.name %>
+  </p>
+
+  <p>
+    <strong>Amount:</strong>
+    <%= number_with_precision(movement.amount, precision: 2) %>
+  </p>
+
+</div>

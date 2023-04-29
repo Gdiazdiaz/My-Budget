@@ -1,0 +1,22 @@
+<div class='header'>
+<%= link_to root_path do %>
+  <%= image_tag 'left-arrow.png', alt: 'left-arrow', class: 'return-arrow' %>
+<% end %>
+<h2 class='header-text'>Resend instructions</h2>
+</div>
+
+<%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="field">
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email), placeholder: 'Email', class: 'input-tab' %>
+  </div>
+
+  <div class="actions btn-container">
+  <div class='border'>
+  <%= f.submit "Resend confirmation instructions", class: 'action-btn btn' %>
+  </div>
+</div>
+<% end %>
+
+<%= render "devise/shared/links" %>

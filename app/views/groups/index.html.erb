@@ -1,0 +1,26 @@
+<div class='header'>
+<h2 class='header-text'>Categories</h2>
+<%= button_to destroy_user_session_path, method: :delete, class: 'logout-btn' do %>
+  <img class="logout-arrow" src="https://iconsplace.com/wp-content/uploads/_icons/ffffff/256/png/logout-icon-18-256.png" alt="logout-arrow">
+<% end %>
+</div>
+<p style="color: green"><%= notice %></p>
+
+<div id="groups">
+<% if @groups.size == 0 %>
+    <h2>Please add a new category</h2>
+    <% end %>
+  <% @groups.each do |group| %>
+    <%= link_to user_group_path(group.author.id, group.id) do %>
+    <div class="content-tab">
+      <%= render group %>
+    </div>
+    <% end %>
+  <% end %>
+</div>
+
+<div class="green-link-btn-container">
+    <div class='green-border'>
+    <%= link_to "Add New Category", new_user_group_path(@user.id), class: 'green-link-btn' %>
+    </div>
+  </div>

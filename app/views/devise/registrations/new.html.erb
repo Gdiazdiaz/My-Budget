@@ -1,0 +1,36 @@
+<div class='header'>
+<%= link_to root_path do %>
+  <%= image_tag 'left-arrow.png', alt: 'left-arrow', class: 'return-arrow' %>
+<% end %>
+<h2 class='header-text'>Register</h2>
+</div>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="field">
+  <%= f.text_field :name, autofocus: true, autocomplete: "name", required: true, placeholder: 'Full Name', class: 'input-tab' %>
+</div>
+
+  <div class="field">
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", required: true, placeholder: 'Email', class: 'input-tab' %>
+  </div>
+
+  <div class="field">
+    <%= f.password_field :password, autocomplete: "new-password", required: true, placeholder: 'Password', class: 'input-tab' %>
+  </div>
+
+  <div class="field">
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", required: true, placeholder: 'Confirm Password', class: 'input-tab' %>
+  </div>
+
+  <div class="actions btn-container">
+    <div class='border'>
+    <%= f.submit "Sign up", class: 'action-btn btn' %>
+    </div>
+  </div>
+<% end %>
+
+<div class='actions-container'>
+<%= render "devise/shared/links" %>
+</div>

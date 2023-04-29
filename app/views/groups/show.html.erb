@@ -1,0 +1,26 @@
+<div class='header'>
+<%= link_to root_path do %>
+  <%= image_tag 'left-arrow.png', alt: 'left-arrow', class: 'return-arrow' %>
+<% end %>
+<h2 class='header-text'><%= @group.name %><%= content_tag :span, " ($#{@group.movements.sum { |rf| rf.amount }})", class: 'total-amount' %></h2>
+</div>
+<p style="color: green"><%= notice %></p>
+
+<div id="movements">
+<% @movements.each do |movement| %>
+  <div class="content-tab">
+    <div class='main-movement-container'>
+      <%= content_tag :span, movement.name, class: 'movement-name' %>
+      <div class='amount-container'>
+      $<%= content_tag :span, movement.amount, class: 'movement-amount' %>
+      </div>
+    </div>
+  </div>
+<% end %>
+</div>
+
+<div class="green-link-btn-container">
+    <div class='green-border'>
+    <%= link_to "Add a New Transaction", new_user_group_movement_path(@user.id, @group.id), class: 'green-link-btn' %>
+    </div>
+  </div>
