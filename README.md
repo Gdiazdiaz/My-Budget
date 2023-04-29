@@ -142,7 +142,7 @@ Authors would like to thank:
 - [Microverse](https://www.microverse.org/)
 - Code Reviewers
 - Coding Partners
-Original design idea by [Gregoire Vella on Behance](https://www.behance.net/gregoirevella)
+- Original design idea by [Gregoire Vella on Behance](https://www.behance.net/gregoirevella)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
