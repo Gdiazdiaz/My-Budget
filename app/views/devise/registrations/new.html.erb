@@ -9,19 +9,19 @@
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
-  <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: 'Full Name', class: 'input-tab' %>
+  <%= f.text_field :name, autofocus: true, autocomplete: "name", required: true, placeholder: 'Full Name', class: 'input-tab' %>
 </div>
 
   <div class="field">
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'Email', class: 'input-tab' %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", required: true, placeholder: 'Email', class: 'input-tab' %>
   </div>
 
   <div class="field">
-    <%= f.password_field :password, autocomplete: "new-password", placeholder: 'Password', class: 'input-tab' %>
+    <%= f.password_field :password, autocomplete: "new-password", required: true, placeholder: 'Password', class: 'input-tab' %>
   </div>
 
   <div class="field">
-    <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: 'Confirm Password', class: 'input-tab' %>
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", required: true, placeholder: 'Confirm Password', class: 'input-tab' %>
   </div>
 
   <div class="actions btn-container">
