@@ -9,11 +9,7 @@
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
-  <%= f.text_field :first_name, autofocus: true, autocomplete: "given-name", placeholder: 'First Name', class: 'input-tab' %>
-</div>
-
-<div class="field">
-  <%= f.text_field :last_name, autofocus: true, autocomplete: "family-name", placeholder: 'Last Name', class: 'input-tab' %>
+  <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: 'Full Name', class: 'input-tab' %>
 </div>
 
   <div class="field">
