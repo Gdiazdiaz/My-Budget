@@ -47,7 +47,7 @@
 🚀 Live Demo <a name="live-demo"></a>
 
 - [Live Demo Link](https://budd-get.onrender.com/)
-- [Video Demostration](https://www.loom.com/share/335925cb77b7422ab1ab105e5ea88403)
+- [Video Demostration](https://www.loom.com/share/76044642b5d4457c92ed4e8c8f1c97d7)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p> -->
 
